@@ -11,14 +11,14 @@ import java.io.PrintWriter;
  */
 @WebServlet(urlPatterns = {"/Add"})
 public class Add extends HttpServlet {
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//    }
-//
-//    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//
-//    }
-    public void service(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        process(request,response);
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        process(request,response);
+    }
+    public void process(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int i = Integer.parseInt(request.getParameter("t1"));
         int j = Integer.parseInt(request.getParameter("t2"));
 
